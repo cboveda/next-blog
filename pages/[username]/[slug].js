@@ -12,8 +12,15 @@ export async function getStaticProps({ params }) {
 
     if (userDoc) {
         const postRef = userDoc.ref.collection('posts').doc(slug);
-        post = postToJSON(await postRef.get())
+        const postDoc = await postRef.get();
 
+        if (!postDoc.exists) {
+            return {
+                notFound: true,
+            }
+        }
+
+        post = postToJSON(postDoc);
         path = postRef.path;
     }
 
