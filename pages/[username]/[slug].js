@@ -1,6 +1,10 @@
-export default function PostPage({ }) {
+
+
+
+export default function Page({ }) {
     return (
         <main>
+
         </main>
     )
 }
