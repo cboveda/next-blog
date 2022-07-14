@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function PostFeed({ posts, admin }) {
     return (
-        posts ? posts.map((post) => <PostItem post={post} admin={admin} />) : null
+        posts ? posts.map((post, i) => <PostItem key={i} post={post} admin={admin} />) : null
     );
 }
 

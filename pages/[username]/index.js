@@ -4,7 +4,8 @@ import { getUserWithUsername, postToJSON } from '../../lib/firebase';
 
 export async function getServerSideProps({ query }) {
     const { username } = query;
-    const userDoc = await getUserWithUsername(username)
+
+    const userDoc = await getUserWithUsername(username);
 
     if (!userDoc) {
         return {
@@ -27,7 +28,7 @@ export async function getServerSideProps({ query }) {
     }
 
     return {
-        props: { user, posts }
+        props: { user, posts },
     };
 }
 
