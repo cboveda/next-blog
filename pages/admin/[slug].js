@@ -8,6 +8,7 @@ import { firestore, auth, serverTimestamp } from '../../lib/firebase'
 import Link from 'next/link';
 import { useForm } from 'react-hook-form'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import ImageUploader from '../../components/ImageUploader';
 
 export default function AdminPostEdit({ }) {
     return (
@@ -33,7 +34,7 @@ function PostManager() {
                     <section>
                         <h1>{post.title}</h1>
                         <p>ID: {post.slug}</p>
-
+                        <ImageUploader />
                         <PostForm postRef={postRef} defaultValues={post} preview={preview}></PostForm>
                     </section>
 
